@@ -21,12 +21,17 @@ window.addEventListener('DOMContentLoaded',(event) => {
 function getByID(id){
     return document.querySelector(id).value;
 }
+
+var datepickerDefault = new MtrDatepicker({target: "date",timepicker:0});
+
 function submitted(){
     let empdata = new EmployeeData();
     empdata.name = getByID('#name');
     empdata.profilePic = getByID('input[name="profile"]:checked');
     empdata.gender = getByID('input[name="gender"]:checked');
-    empdata.startDate = getByID('#joindate');
+    // empdata.startDate = getByID('#joindate');
+    var date = datepickerDefault.toLocaleDateString();
+    empdata.startDate = date.split("/").reverse().join("-");
     empdata.salary = getByID('#salary');
     var arr = [];
     for(var c of document.querySelectorAll('input[name="dept"]:checked').values() ){
@@ -38,3 +43,43 @@ function submitted(){
     alert(empdata.toString());
 }
 
+const save = () =>{
+    try{
+        let employeePayrollData = submitted();
+        createAndUpdateStorage(employeePayrollData);
+    }
+    catch(e){
+        return;
+    }
+}
+
+function createAndUpdateStorage(employeePayrollData){
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(employeePayrollList != undefined){
+        employeePayrollList.push(employeePayrollData);
+    }
+    else{
+        employeePayrollList = [employeePayrollData];
+    }
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
+}
+
+const resetForm = () => {
+    setValue('#name','');
+    setValue('#salary','');
+    setValue('#notes','');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+}
+
+const setValue = (id, value) =>{
+    document.querySelector(id).value = value;
+}
+
+const unsetSelectedValues = (propertyValue) =>{
+    document.querySelectorAll(propertyValue).forEach(item => {
+        item.checked = false;
+    });
+}

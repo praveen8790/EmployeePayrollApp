@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" con!_ent="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../node_modules/mtr-datepicker/dist/mtr-datepicker.min.css">
+        <link rel="stylesheet" href="../node_modules/mtr-datepicker/dist/mtr-datepicker.default-theme.min.css">
+        <script src="../node_modules/mtr-datepicker/dist/mtr-datepicker.min.js"></script>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <button onclick="submitted()">submit</button>
+        <script>
+            datepickerDefault = new MtrDatepicker({target: "demo",timepicker:0});
+            datepickerDefault.format('Y.M.D');
+
+            function submitted(){
+                var date = datepickerDefault.toLocaleDateString();
+                var newdate = date.split("/").reverse().join("-");
+                alert(newdate);
+            }
+        </script>
+    </body>
+</html>

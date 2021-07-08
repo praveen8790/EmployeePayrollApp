@@ -6,10 +6,13 @@
         <meta name="viewport" con!_ent="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
         <title>Employee payroll form</title>
+        <link rel="stylesheet" href="../node_modules/mtr-datepicker/dist/mtr-datepicker.min.css">
+        <link rel="stylesheet" href="../node_modules/mtr-datepicker/dist/mtr-datepicker.default-theme.min.css">
+        <script src="../node_modules/mtr-datepicker/dist/mtr-datepicker.min.js"></script>
         <link rel="stylesheet" href="../css/payrollform.css">
-        <script src="../js/Employee.js"></script>
+        <script defer src="../js/Employee.js"></script>
         <script src="../js/EmployeeData.js"></script>
-        
+
     </head>
     <body> 
         <header class="header-content header">
@@ -79,10 +82,11 @@
                 </div>
                 <div class="row-content">
                     <label class="label text" for="startDate">Start Date</label>
-                    <div class="nativeDateTimePicker">
+                    <!-- <div class="nativeDateTimePicker">
                         <input type="date" class="input1" id="joindate" name="jondate">
                         <span class="validity"></span>
-                    </div>
+                    </div> -->
+                    <div id="date"></div>
                 </div>
                 <div class="row-content">
                     <label class="label text" for="notes">Notes</label>
