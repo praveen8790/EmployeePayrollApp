@@ -41,6 +41,7 @@ function submitted(){
     // alert(getByID('#name'));
     // alert(getByID('input[name="profile"]:checked'));
     alert(empdata.toString());
+    return empdata;
 }
 
 const save = () =>{
