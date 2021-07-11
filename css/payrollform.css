@@ -166,3 +166,19 @@ error-output{
     font-size: 16px;
     line-height: 1.5;
 }
+
+.mtr-datepicker .mtr-content .mtr-values .mtr-default-value, 
+.mtr-datepicker .mtr-content .mtr-values .mtr-default-value-name, 
+.mtr-datepicker .mtr-content .mtr-values .mtr-default-value.has-name{
+    background-color: #fff;
+}
+
+.mtr-datepicker .mtr-content {
+    color: #42515F;
+    background-color: #fff;
+    font: normal normal normal 16px Roboto;
+}
+
+.mtr-datepicker .mtr-content input .mtr-values .mtr-default-value, .mtr-datepicker .mtr-content input .mtr-values .mtr-default-value-name, .mtr-datepicker .mtr-content input .mtr-values .mtr-default-value.has-name, .mtr-datepicker .mtr-content.mtr-active .mtr-values .mtr-default-value, .mtr-datepicker .mtr-content.mtr-active .mtr-values .mtr-default-value-name, .mtr-datepicker .mtr-content.mtr-active .mtr-values .mtr-default-value.has-name, .mtr-datepicker .mtr-content:hover .mtr-values .mtr-default-value, .mtr-datepicker .mtr-content:hover .mtr-values .mtr-default-value-name, .mtr-datepicker .mtr-content:hover .mtr-values .mtr-default-value.has-name {
+    background: #fff;
+}

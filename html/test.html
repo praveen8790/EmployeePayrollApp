@@ -10,15 +10,31 @@
     </head>
     <body>
         <div id="demo"></div>
+        <div id="dd"></div>
         <button onclick="submitted()">submit</button>
         <script>
-            datepickerDefault = new MtrDatepicker({target: "demo",timepicker:0});
-            datepickerDefault.format('Y.M.D');
+            // let datepickerDefault = new MtrDatepicker({target: "demo",timepicker:0,future:false});
+            // datepickerDefault.format('Y.M.D');
 
             function submitted(){
-                var date = datepickerDefault.toLocaleDateString();
-                var newdate = date.split("/").reverse().join("-");
-                alert(newdate);
+                // var date = datepickerDefault.toString();
+                // date = date.split(" ");
+                // var newdate = date[2] + ' ' + date[1] + ' ' +  date[3];
+                // alert(newdate);
+                let time = '2019/08/02';
+                alert(time);
+                // var initDate = new Date(time);
+                var config = {
+                    target: 'dd',
+                    timestamp: new Date(time).getTime(),
+                    timepicker:false
+                };
+                var myDatepicker = new MtrDatepicker(config,);
+
+                // const d = new Date();
+                // let x = d.toString();
+                // document.getElementById("demo").innerHTML = x;
+
             }
         </script>
     </body>

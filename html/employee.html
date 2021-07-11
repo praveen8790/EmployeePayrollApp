@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../css/payrollform.css">
         <script defer src="../js/Employee.js"></script>
         <script src="../js/EmployeeData.js"></script>
+        <script defer src="../js/site_properties.js"></script> 
+
 
     </head>
     <body> 
@@ -25,7 +27,7 @@
             </div>
         </header>
         <div class="form-content">
-            <form class="form" action="#" onsubmit="save();return false">
+            <form class="form" action="#" onsubmit="save(event)" >
                 <div class="form-head">Employee payroll form</div>
                 <div class="row-content">
                     <label class="label text" for="name">Name</label>
@@ -95,7 +97,7 @@
                 <div class="buttonParent">
                     <a href="./employee.html" class="resetButton button cancelButton">Cancel</a>
                     <div class="submit-reset">
-                        <button type="submit" onclick="submitted()" class="button submitButton" id="submitButton">Submit</button>
+                        <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                         <button type="reset" class="resetButton button">Reset</button>
                     </div>
                 </div>
