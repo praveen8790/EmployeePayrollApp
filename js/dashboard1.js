@@ -19,7 +19,7 @@ const createInnerHtml = () => {
     let innerHtml = `${headerHtml}`;
     for (let empPayrollData of empPayrollList) { 
         innerHtml = `${innerHtml}
-            <tr>
+            <tr id="${empPayrollData._id}" onclick="update(this)">
                 <td><img class="profile" src="${empPayrollData._profilePic}" alt=""></td>
                 <td>${empPayrollData._name}</td> 
                 <td>${empPayrollData._gender}</td> 
@@ -61,4 +61,87 @@ const update = (node) => {
     if(!empPayrollData) return;
     localStorage.setItem('editEmp',JSON.stringify(empPayrollData));
     window.location.replace(site_properties.add_emp_payroll_page);
+//     const table = `
+//     <form class="form" action="#" onsubmit="save(event)" >
+//         <div class="form-head">Employee payroll form</div>
+//         <div class="row-content">
+//             <label class="label text" for="name">Name</label>
+//             <input class="input" type="text" id="name" name="name" placeholder="Your name" required>
+//             <error-output class="text-error" for="text"></error-output>
+//         </div>
+//         <div class="row-content">
+//             <label class="label text" for="profile">Profile image</label> 
+//             <div class="profile-radio-content">
+//                 <label>
+//                     <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png" required>
+//                     <img class="profile" id="image1" src="../assets/profile-images/Ellipse -3.png">
+//                 </label>
+//                 <label>
+//                     <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse 1.png" required>
+//                     <img class="profile" id="image2" src="../assets/profile-images/Ellipse 1.png"> 
+//                 </label>
+//                 <label>
+//                     <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse -8.png" required>
+//                     <img class="profile" id="image3" src="../assets/profile-images/Ellipse -8.png"> 
+//                 </label>
+//                 <label>
+//                     <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png" required>
+//                     <img class="profile" id="image4" src="../assets/profile-images/Ellipse -7.png"> 
+//                 </label>
+//             </div>
+//         </div>
+//         <div class="row—content">
+//             <label class="label text" for="gender">Gender</label>
+//                 <input type="radio" id="male" name="gender" value="male">
+//                 <label class="text" for="male">Male</label>
+//                 <input type="radio" id="female" name="gender" value="female">
+//                 <label class="text" for="female">Female</label>
+            
+//         </div>
+//         <div class="row—content">
+//             <label class="label text" for="department">Department</label>
+//                 <input class="checkbox" type="checkbox" id="hr" name="dept" value="HR">
+//                 <label class="text" for="hr">HR</label>
+//                 <input class="checkbox" type="checkbox" id="sales" name="dept" value="Sales">
+//                 <label class="text" for="sales">Sales</label> 
+//                 <input class="checkbox" type="checkbox" id="finance" name="dept" value="Finance"> 
+//                 <label class="text" for="finance">Finance</label> 
+//                 <input class="checkbox" type="checkbox" id="engineer" name="dept" value="Engineer">
+//                 <label class="text" for="engineer">Engineer</label> 
+//                 <input class="checkbox" type="checkbox" id="others" name="dept" value="Others">
+//                 <label class="text" for="others">Others</label>
+//         </div>
+//         <div class="row-content">
+//             <label class="label text" for="salary">Salary</label>
+//             <input class="input" type="range" name="salary" id="salary" min="300000"
+//                       max="500000" step="100" value="400000">
+//             <output class="salary-output text" for="salary" id="salary-output">400000</output>
+//         </div>
+//         <div class="row-content">
+//             <label class="label text" for="startDate">Start Date</label>
+//             <!-- <div class="nativeDateTimePicker">
+//                 <input type="date" class="input1" id="joindate" name="jondate">
+//                 <span class="validity"></span>
+//             </div> -->
+//             <div id="date"></div>
+//         </div>
+//         <div class="row-content">
+//             <label class="label text" for="notes">Notes</label>
+//             <textarea id="notes" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
+//         </div>
+//         <div class="buttonParent">
+//             <a href="./employee.html" class="resetButton button cancelButton">Cancel</a>
+//             <div class="submit-reset">
+//                 <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+//                 <button type="reset" class="resetButton button">Reset</button>
+//             </div>
+//         </div>
+//     </form>
+
+// `;
+//     document.querySelector('#myModal').innerHTML = table;
 }
+
+// const createInnerTable=() =>{
+    
+// }
